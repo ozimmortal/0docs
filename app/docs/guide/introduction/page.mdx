@@ -1,0 +1,90 @@
+import CodeBlock from '@/components/mdx/code'
+import {CLICommand} from '@/components/mdx/cli-command'
+
+# Introduction
+
+Better Auth is a framework-agnostic, universal authentication and authorization framework for TypeScript. It provides a comprehensive set of features out of the box and includes a plugin ecosystem that simplifies adding advanced functionalities. Whether you need 2FA, passkey, multi-tenancy, multi-session support, or even enterprise features like SSO, creating your own IDP, it lets you focus on building your application instead of reinventing the wheel.
+
+## Examples
+
+- [5 Tiny CLI Tricks You (Probably) Didn’t Know](/n/1)
+- [6 Sneaky JavaScript Patterns to Cut Boilerplate](/n/2)
+- [6 CSS Patterns to Cut Boilerplate](/n/3)
+
+## Features
+
+- Syntax highlighting
+- Light/dark mode
+- Sitemap support
+- Fully customizable
+- Optional redirects
+- Write in Markdown / MDX
+
+## Stack
+
+- Next.js / React
+- Tailwind CSS
+- TypeScript
+- Vercel
+
+## Code
+
+- [next-mdx-blog](https://github.com/leerob/next-mdx-blog)
+
+## 4. **Tagged Template Literals for Safe HTML**
+
+Prevent XSS without a third-party lib:
+
+<CodeBlock code={`
+const escape = (strings, ...values) =>
+  strings.reduce(
+    (acc, str, i) =>
+      acc +
+      str +
+      (values[i]
+        ? String(values[i]).replace(/[&<>"']/g, (s) => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;',
+          })[s])
+        : ''),
+    '',
+  );
+
+const name = '<script>alert(1)</script>';
+
+
+`} language="javascript" filename="hello.js" />
+
+
+
+# GFM
+
+## Autolink literals
+
+www.example.com, https://example.com, and contact@example.com.
+
+## Footnote
+
+A note[^1]
+
+[^1]: Big note.
+
+## Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+## Table
+
+
+<Table
+  data={{
+    headers: ["Feature", "Status"],
+    rows: [["Login", "✅"], ["Billing", "🚧"]],
+  }}
+/>
+
+<CLICommand description="npm" command="npm install shikiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" />
+
