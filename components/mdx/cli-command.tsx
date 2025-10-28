@@ -4,12 +4,8 @@ import { Terminal } from "lucide-react"
 import { CopyButton } from "./copy-button"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { cn } from "@/lib/utils"
+import { CLICommandProps } from "@/lib/type"
 
-interface CLICommandProps {
-  command: string
-  description?: string
-  className?: string
-}
 
 export function CLICommand({ command, description, className }: CLICommandProps) {
   return (

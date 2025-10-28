@@ -3,14 +3,7 @@ import { useEffect, useState } from "react"
 import { codeToHtml } from "shiki"
 import { CopyButton } from "./copy-button"
 import { useTheme } from "next-themes"
-
-
-interface CodeBlockProps {
-  code: string
-  language?: string
-  filename?: string
-}
-
+import { CodeBlockProps } from "@/lib/type"
 
 export default function CodeBlock({ code, language = "typescript", filename }: CodeBlockProps) {
   const [html, setHtml] = useState<string>("")
